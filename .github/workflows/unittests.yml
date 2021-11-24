@@ -23,7 +23,7 @@ jobs:
       run: dotnet build --no-restore
       
     - name: Test
-      run: dotnet test --logger trx --results-directory "TestResults"
+      run: dotnet test --logger trx --results-directory "TestResults" --filter "FullyQualifiedName\!~IntegrationTests"
 
     - name: Upload test results
       uses: actions/upload-artifact@v2
